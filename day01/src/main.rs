@@ -6,8 +6,8 @@ fn part1(input: &str) -> u32 {
         .map(|line| {
             let mut digits = line.chars().filter_map(|c| c.to_digit(10));
             let first = digits.next().unwrap();
-            let second = digits.last().unwrap_or(first);
-            first * 10 + second
+            let last = digits.last().unwrap_or(first);
+            first * 10 + last
         })
         .sum()
 }
